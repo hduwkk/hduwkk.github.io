@@ -1,7 +1,7 @@
 module.exports = {
   base: '/',
   title: 'hduwkk',
-  description: 'Just playing around',
+  description: 'FE coder的日常',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -12,5 +12,9 @@ module.exports = {
         ['', '路由'],
       ]
     }
+  },
+  markdown: {
+    lineNumbers: true,
+    externalLinks: { target: '_blank', rel: 'noopener noreferrer' }
   }
 }

@@ -1,5 +1,9 @@
 ## 基础路由
 
+[./hello.html](/hello.html)
+[百度](http://baidu.com)
+
+
 ```js
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
