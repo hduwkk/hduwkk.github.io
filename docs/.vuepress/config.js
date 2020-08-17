@@ -1,5 +1,8 @@
+const path = require('path')
+
 module.exports = {
   base: '/',
+  dest: path.join(__dirname, '../../dist'),
   title: 'hduwkk',
   description: 'FE coder的日常',
   themeConfig: {

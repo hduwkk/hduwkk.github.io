@@ -1,6 +1,7 @@
 ## 基础路由
 
-[./hello.html](/hello.html)
+[./hello.html](https://hduwkk.github.io/dist/hello.html)
+[./hello.html](https://hduwkk.github.io/hello.html)
 [百度](http://baidu.com)
 
 
