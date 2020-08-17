@@ -1,0 +1,15 @@
+{
+  "name": "hduwkk.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hduwkk/hduwkk.github.io.git",
+  "author": "hduwkk <873057692@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
