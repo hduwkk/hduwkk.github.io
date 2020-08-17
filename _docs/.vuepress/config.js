@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   base: '/',
-  dest: path.join(__dirname, '../../dist'),
+  dest: path.join(__dirname, '../../docs'),
   title: 'hduwkk',
   description: 'FE coder的日常',
   themeConfig: {
