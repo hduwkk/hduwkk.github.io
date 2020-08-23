@@ -7,12 +7,17 @@ module.exports = {
   description: 'FE coder的日常',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'react', link: '/react/' },
+      { text: '总结', link: '/summary/' },
+      { text: 'react', link: '/react/' }
     ],
     sidebar: {
+      '/summary/': [
+        ['', '总结'],
+        ['build', '构建环境']
+      ],
       '/react/': [
         ['', '路由'],
+        'one'
       ]
     }
   },
