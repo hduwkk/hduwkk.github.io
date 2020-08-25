@@ -1,3 +1,28 @@
+## 1px
+
+高清屏下用 1px 会显得比较粗，因为 dppx 大，单位像素上的点多了。通常我们可以使用伪元素定位，然后缩放的方法。
+[例子](https://hduwkk.github.io/dist/1px)：
+```css
+/* 示例 */
+/* 也可以利用媒体查询，缩放为1/2或者1/3  */
+.border1px {
+  position: relative;
+  border: none;
+}
+.border1px::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border: 1px solid $borderColor;
+  transform: scale(0.5, 0.5);
+  left: 0;
+  top: 0;
+  transform-origin: left top;
+  border-radius: 2px;
+}
+```
+
 ## eslint + prettier
 
 在 vue-cli 4.x 提供了使用 eslint + prettier 的配置，为了保存时自动格式化代码，可以在 vscode 中配置`editor.formatOnSave: true`以及`editor.codeActionsOnSave: {source.fixAll: true}`。
