@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover"
+    />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .area {
+        line-height: 20px;
+        font-size: 14px;
+        text-align: center;
+        position: absolute;
+        color: #fff;
+        padding: 2px;
+        opacity: 0.5;
+      }
+      .area.safe-area {
+        opacity: 0.8;
+      }
+      .area-top {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(8, 141, 37);
+      }
+      .area-top.safe-area {
+        /* Status bar height on iOS 10 */
+        padding-top: 2px;
+        /* Status bar height on iOS 11+ */
+        padding-top: constant(safe-area-inset-top);
+      }
+      .area-bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(155, 189, 5);
+      }
+      .area-bottom.safe-area {
+        /* Status bar height on iOS 10 */
+        padding-bottom: 2px;
+        /* Status bar height on iOS 11+ */
+        padding-bottom: constant(safe-area-inset-bottom);
+      }
+      .area-left {
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 100%;
+        background-color: rgb(128, 4, 4);
+      }
+      .area-left.safe-area {
+        /* Status bar height on iOS 10 */
+        padding-left: 2px;
+        /* Status bar height on iOS 11+ */
+        padding-left: constant(safe-area-inset-left);
+      }
+      .area-right {
+        right: 0;
+        top: 0;
+        width: 20px;
+        height: 100%;
+        background-color: rgb(4, 31, 107);
+      }
+      .area-right.safe-area {
+        /* Status bar height on iOS 10 */
+        padding-right: 2px;
+        /* Status bar height on iOS 11+ */
+        padding-right: constant(safe-area-inset-right);
+      }
+      #app {
+        position: relative;
+        overflow: hidden;
+      }
+      .inner-app {
+        padding: 40px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="inner-app">
+        <h3>安全区域_viewport-fit=cover</h3>
+        <button id="btn">按我切换css</button>
+        <div class="area area-top safe-area">上面上面上面上面上面上面</div>
+        <div class="area area-bottom safe-area">
+          下面下面下面下面下面下面
+        </div>
+        <div class="area area-right safe-area">
+          右边右边右边右边右边右边
+        </div>
+        <div class="area area-left safe-area">
+          左边左边左边左边左边左边
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function() {
+        console.log(1)
+        const AREA_SAFE = 1
+        const AREA_NONE = 0
+        let type = AREA_SAFE
+        const _class = 'safe-area'
+        document.querySelector('#btn').onclick = function() {
+          if (type === AREA_SAFE) {
+            type = AREA_NONE
+            remove(_class)
+            console.log('移除...')
+          } else {
+            type = AREA_SAFE
+            add(_class)
+            console.log('添加...')
+          }
+        }
+        function add(_class) {
+          document.querySelectorAll('.area').forEach(ele => {
+            if (!ele.classList.contains(_class)) {
+              ele.classList.add(_class)
+            }
+          })
+        }
+        function remove(_class) {
+          document.querySelectorAll('.area').forEach(ele => {
+            ele.classList.remove(_class)
+          })
+        }
+      }
+    </script>
+  </body>
+</html>
